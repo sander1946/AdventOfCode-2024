@@ -14,6 +14,8 @@ public class Main {
 
         for (String splitInput1 : splitInput) {
             String[] split = splitInput1.split("   ");
+            split[0] = split[0].strip();
+            split[1] = split[1].strip();
             left.add(Integer.valueOf(split[0]));
             right.add(Integer.valueOf(split[1]));
         }
@@ -48,6 +50,8 @@ public class Main {
         // Add the values to the left and right arraylist again
         for (String splitInput1 : splitInput) {
             String[] split = splitInput1.split("   ");
+            split[0] = split[0].strip();
+            split[1] = split[1].strip();
             left.add(Integer.valueOf(split[0]));
             right.add(Integer.valueOf(split[1]));
         }

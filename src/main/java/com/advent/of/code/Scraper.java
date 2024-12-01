@@ -1,5 +1,8 @@
 package com.advent.of.code;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
@@ -52,40 +55,50 @@ public final class Scraper {
      * @param dayOfTheMonth The specific day of the month
      * @return The path to the saved input file
      */
-    private String saveInput(int dayOfTheMonth) {
+    private void saveInput(int dayOfTheMonth) {
         try {
-            Dotenv dotenv = Dotenv.configure().load();
-
-            String url = "https://adventofcode.com/2024/day/" + dayOfTheMonth + "/input";
-
-            Map<String, String> cookies = new HashMap<>();
-            cookies.put("session", dotenv.get("SESSION_COOKIE"));
-
-            Connection.Response doc = Jsoup.connect(url)
-                    .cookies(cookies)
-                    .method(Connection.Method.GET)
-                    .execute();
-
-            if (doc.statusCode() != 200) {
-                throw new IOException(doc.statusCode() + " (" + doc.body() + ")");
-            }
-
-            this.input = doc.body();
-
             this.path = "src\\main\\resources\\input\\" + dayOfTheMonth + ".txt";
+            if (new File(this.path).exists()) {
+                System.out.println("Input for day " + dayOfTheMonth + " already exists");
+                try (BufferedReader br = new BufferedReader(new FileReader(this.path))) {
+                    StringBuilder sb = new StringBuilder();
+                    String line = br.readLine();
 
-            try (FileWriter myWriter = new FileWriter(path)) {
-                myWriter.write(this.input);
+                    while (line != null) {
+                        sb.append(line);
+                        sb.append(System.lineSeparator());
+                        line = br.readLine();
+                    }
+                    this.input = sb.toString();
+                }
+            } else {
+                Dotenv dotenv = Dotenv.configure().load();
+
+                String url = "https://adventofcode.com/2024/day/" + dayOfTheMonth + "/input";
+
+                Map<String, String> cookies = new HashMap<>();
+                cookies.put("session", dotenv.get("SESSION_COOKIE"));
+
+                Connection.Response doc = Jsoup.connect(url)
+                        .cookies(cookies)
+                        .method(Connection.Method.GET)
+                        .execute();
+
+                if (doc.statusCode() != 200) {
+                    throw new IOException(doc.statusCode() + " (" + doc.body() + ")");
+                }
+
+                this.input = doc.body();
+                
+                try (FileWriter myWriter = new FileWriter(this.path)) {
+                    myWriter.write(this.input);
+                }
+                System.out.println("Successfully saved input for day " + dayOfTheMonth);
             }
-            System.out.println("Successfully saved input for day " + dayOfTheMonth);
-            return path;
-
         } catch (DotenvException e) {
             System.err.println("Error while loading .env file: " + e.getMessage());
-            return null;
         } catch (IOException e) {
             System.err.println("Error while saving input: " + e.getMessage());
-            return null;
         }
     }
 
