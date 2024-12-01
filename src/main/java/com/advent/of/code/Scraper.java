@@ -59,7 +59,6 @@ public final class Scraper {
         try {
             this.path = "src\\main\\resources\\input\\" + dayOfTheMonth + ".txt";
             if (new File(this.path).exists()) {
-                System.out.println("Input for day " + dayOfTheMonth + " already exists");
                 try (BufferedReader br = new BufferedReader(new FileReader(this.path))) {
                     StringBuilder sb = new StringBuilder();
                     String line = br.readLine();
