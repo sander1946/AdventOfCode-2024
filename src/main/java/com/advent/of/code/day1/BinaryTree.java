@@ -1,4 +1,4 @@
-package com.advent.of.code.dayOne;
+package com.advent.of.code.day1;
 
 // BinaryTree Class
 public class BinaryTree {

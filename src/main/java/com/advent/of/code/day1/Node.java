@@ -1,4 +1,4 @@
-package com.advent.of.code.dayOne;
+package com.advent.of.code.day1;
 
     // Node Class
 public class Node {

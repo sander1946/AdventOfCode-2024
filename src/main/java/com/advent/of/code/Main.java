@@ -3,10 +3,11 @@ package com.advent.of.code;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import com.advent.of.code.dayOne.BinaryTree;
-import com.advent.of.code.dayOne.MinHeap;
-import com.advent.of.code.dayOne.Node;
-import com.advent.of.code.dayTwo.Raport;
+import com.advent.of.code.day1.BinaryTree;
+import com.advent.of.code.day1.MinHeap;
+import com.advent.of.code.day1.Node;
+import com.advent.of.code.day2.Raport;
+import com.advent.of.code.scraper.Scraper;
 
 public class Main {
     public static void dayOne() {

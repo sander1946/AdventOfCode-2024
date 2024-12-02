@@ -1,4 +1,4 @@
-package com.advent.of.code;
+package com.advent.of.code.scraper;
 
 import java.io.BufferedReader;
 import java.io.File;
