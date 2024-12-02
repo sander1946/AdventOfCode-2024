@@ -28,7 +28,15 @@ import com.advent.of.code.day7.daySeven;
 import com.advent.of.code.day8.dayEight;
 import com.advent.of.code.day9.dayNine;
 
+/**
+ * Main class to run the Advent of Code 2024 challenge
+ */
 public class Main {
+
+    /**
+     * Main method to run the Advent of Code 2024 challenge
+     * @param args If an argument is given, it will run all days regardless of the current day
+     */
     public static void main(String[] args) {
         Calendar cal = Calendar.getInstance();
         int dayOfTheMonth = cal.get(Calendar.DAY_OF_MONTH);

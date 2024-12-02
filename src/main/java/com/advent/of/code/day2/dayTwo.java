@@ -4,7 +4,13 @@ import java.util.ArrayList;
 
 import com.advent.of.code.scraper.Scraper;
 
+/**
+ * Day Two solution
+ */
 public class dayTwo {
+    /**
+     * Run the solution for day two
+     */
     public static void run() {
         System.out.println("\n===== Day Two =============");
         // Part One

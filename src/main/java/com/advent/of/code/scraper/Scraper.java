@@ -42,10 +42,18 @@ public final class Scraper {
         this.saveInput(this.dayOfTheMonth); // Save input for a specific day
     }
 
+    /**
+     * get the split input of the challange
+     * @return The split input of the challange
+     */
     public String[] getInput() {
         return this.input;
     }
 
+    /**
+     * get the path to the saved input file
+     * @return The path to the saved input file
+     */
     public String getPath() {
         return this.path;
     }
@@ -102,6 +110,10 @@ public final class Scraper {
         }
     }
 
+    /**
+     * Main method to test the Scraper class
+     * @param args The command line arguments
+     */
     @SuppressWarnings("unused")
     public static void main(String[] args) {
         Scraper temp = new Scraper();
