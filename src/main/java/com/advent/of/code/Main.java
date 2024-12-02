@@ -32,7 +32,6 @@ import com.advent.of.code.day9.dayNine;
  * Main class to run the Advent of Code 2024 challenge
  */
 public class Main {
-
     /**
      * Main method to run the Advent of Code 2024 challenge
      * @param args If an argument is given, it will run all days regardless of the current day
