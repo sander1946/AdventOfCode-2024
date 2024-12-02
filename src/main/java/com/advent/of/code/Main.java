@@ -4,7 +4,7 @@ public class Main {
     public static void dayOne() {
         // Part One
         int totalDistance = 0;
-        Scraper scraper = new Scraper();
+        Scraper scraper = new Scraper(1);
         String input = scraper.getInput();
         String[] splitInput = input.split("\n");
         MinHeap heapOne = new MinHeap();
@@ -56,12 +56,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println("Advent of Code 2024");
-        System.out.println("Day One");
-        long startTime = System.nanoTime();
+        System.out.println("=== Advent of Code 2024 ===");
+        System.out.println("\n========= Day One =========");
         dayOne();
-        long endTime = System.nanoTime();
-        long duration = (endTime - startTime);  //divide by 1000000 to get milliseconds
-        System.out.println("Execution time: " + duration / 1000000 + " milliseconds");
     }
 }
