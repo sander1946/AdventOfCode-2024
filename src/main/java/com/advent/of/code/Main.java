@@ -62,7 +62,7 @@ public class Main {
         Scraper scraper = new Scraper(2);
         String input = scraper.getInput();
         String[] splitInput = input.split("\n");
-        RaportList raportList = new RaportList();
+        ArrayList<Raport> raportList = new ArrayList<>();
         for (String splitInput1 : splitInput) {
             String[] split = splitInput1.split(" ");
             Raport raport = new Raport();
@@ -70,7 +70,7 @@ public class Main {
                 rapport = rapport.strip();
                 raport.add(Integer.valueOf(rapport));
             }
-            raportList.addRaport(raport);
+            raportList.add(raport);
         }
 
         int totalOne = 0;
