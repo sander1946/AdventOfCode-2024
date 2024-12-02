@@ -1,4 +1,4 @@
-package com.advent.of.code;
+package com.advent.of.code.dayOne;
 
 import java.util.ArrayList;
 import java.util.Objects;
