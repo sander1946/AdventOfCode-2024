@@ -190,6 +190,7 @@ public class Main {
         }
         
         System.out.println("=== Advent of Code 2024 ===");
+        long startTime = System.nanoTime();
         switch (dayOfTheMonth) {
             case 1 -> {
                 System.out.println("\n===== Day One =============");
@@ -345,5 +346,8 @@ public class Main {
             }
         }
         System.out.println("\n===========================");
+        long endTime = System.nanoTime();
+        long duration = (endTime - startTime);  //divide by 1000000 to get milliseconds
+        System.out.println("Execution time: " + duration / 1000000 + " milliseconds");
     }
 }
