@@ -8,12 +8,11 @@ public class dayOne {
         // Part One
         int totalDistance = 0;
         Scraper scraper = new Scraper(1);
-        String input = scraper.getInput();
-        String[] splitInput = input.split("\n");
+        String[] input = scraper.getInput();
         MinHeap heapOne = new MinHeap();
         MinHeap heapTwo = new MinHeap();
 
-        for (String splitInput1 : splitInput) {
+        for (String splitInput1 : input) {
             String[] split = splitInput1.split("   ");
             split[0] = split[0].strip();
             split[1] = split[1].strip();
@@ -40,7 +39,7 @@ public class dayOne {
         MinHeap heap = new MinHeap();
         BinaryTree tree = new BinaryTree();
 
-        for (String splitInput1 : splitInput) {
+        for (String splitInput1 : input) {
             String[] split = splitInput1.split("   ");
             split[0] = split[0].strip();
             split[1] = split[1].strip();

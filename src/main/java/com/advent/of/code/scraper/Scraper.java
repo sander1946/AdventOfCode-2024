@@ -21,7 +21,7 @@ import io.github.cdimascio.dotenv.DotenvException;
 public final class Scraper {
     private final int dayOfTheMonth;
     private String path;
-    private String input;
+    private String[] input;
 
     /**
      * Constructor for the Scraper class
@@ -42,7 +42,7 @@ public final class Scraper {
         this.saveInput(this.dayOfTheMonth); // Save input for a specific day
     }
 
-    public String getInput() {
+    public String[] getInput() {
         return this.input;
     }
 
@@ -68,7 +68,8 @@ public final class Scraper {
                         sb.append(System.lineSeparator());
                         line = br.readLine();
                     }
-                    this.input = sb.toString();
+                    
+                    this.input = sb.toString().split("\n");
                 }
             } else {
                 Dotenv dotenv = Dotenv.configure().load();
@@ -87,10 +88,10 @@ public final class Scraper {
                     throw new IOException(doc.statusCode() + " (" + doc.body() + ")");
                 }
 
-                this.input = doc.body();
+                this.input = doc.body().split("\n");
                 
                 try (FileWriter myWriter = new FileWriter(this.path)) {
-                    myWriter.write(this.input);
+                    myWriter.write(doc.body());
                 }
                 System.out.println("Successfully saved input for day " + dayOfTheMonth);
             }

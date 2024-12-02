@@ -8,10 +8,9 @@ public class dayTwo {
     public static void run() {
         System.out.println("\n===== Day Two =============");
         Scraper scraper = new Scraper(2);
-        String input = scraper.getInput();
-        String[] splitInput = input.split("\n");
+        String[] input = scraper.getInput();
         ArrayList<Raport> raportList = new ArrayList<>();
-        for (String splitInput1 : splitInput) {
+        for (String splitInput1 : input) {
             String[] split = splitInput1.split(" ");
             Raport raport = new Raport();
             for (String rapport : split) {
