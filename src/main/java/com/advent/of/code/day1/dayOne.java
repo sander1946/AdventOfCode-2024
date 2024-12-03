@@ -1,15 +1,17 @@
 package com.advent.of.code.day1;
 
+import com.advent.of.code.Day;
 import com.advent.of.code.scraper.Scraper;
 
 /**
  * Day One solution
  */
-public class dayOne {
+public class dayOne extends Day {
     /**
      * Run the solution for day one
      */
-    public static void run() {
+    @Override
+    public void run() {
         System.out.println("\n===== Day One =============");
         // Part One
         int totalDistance = 0;

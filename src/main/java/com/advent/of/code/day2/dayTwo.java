@@ -2,16 +2,18 @@ package com.advent.of.code.day2;
 
 import java.util.ArrayList;
 
+import com.advent.of.code.Day;
 import com.advent.of.code.scraper.Scraper;
 
 /**
  * Day Two solution
  */
-public class dayTwo {
+public class dayTwo extends Day {
     /**
      * Run the solution for day two
      */
-    public static void run() {
+    @Override
+    public void run() {
         System.out.println("\n===== Day Two =============");
         // Part One
         Scraper scraper = new Scraper(2);
