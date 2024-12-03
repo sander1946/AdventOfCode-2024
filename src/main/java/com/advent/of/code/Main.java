@@ -40,7 +40,11 @@ public class Main {
         Calendar cal = Calendar.getInstance();
         int dayOfTheMonth = cal.get(Calendar.DAY_OF_MONTH);
         if (args.length != 0) {
-            dayOfTheMonth = 0; // Default to run all days if an argument is given
+            try {
+                dayOfTheMonth = args[0].isEmpty() ? 0 : Integer.parseInt(args[0]);
+            } catch (NumberFormatException e) {
+                dayOfTheMonth = 0; // Default to run all days if an argument is given
+            }
         }
         
         System.out.println("=== Advent of Code 2024 ===");
