@@ -33,5 +33,26 @@ public class dayThree {
         }
         System.out.println("Part One: " + total);
 
+        total = 0;
+        for (String line : input) {
+            Pattern pattern = Pattern.compile("mul\\([0-9]+,[0-9]+\\)|don't\\(\\)|do\\(\\)");
+            Matcher matcher = pattern.matcher(line);
+            while (matcher.find()) {
+                if (matcher.group().equals("do()")) {
+                    dayThree.dont = false;
+                    continue;
+                } else if (matcher.group().equals("don't()") || dayThree.dont) {
+                    dayThree.dont = true;
+                    continue;
+                }
+                int leftDigit = Integer.parseInt(matcher.group().split(",")[0].split("\\(")[1]);
+                int rightDigit = Integer.parseInt(matcher.group().split(",")[1].split("\\)")[0]);
+                if (leftDigit > 999 || rightDigit > 999 || leftDigit < -999 || rightDigit < -999) {
+                    continue;
+                }
+                total += leftDigit * rightDigit;
+            }
+        }
+        System.out.println("Part Two: " + total);
     }
 }
