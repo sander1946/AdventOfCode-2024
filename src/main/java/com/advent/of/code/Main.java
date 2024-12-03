@@ -1,5 +1,6 @@
 package com.advent.of.code;
 
+import java.text.DecimalFormat;
 import java.util.Calendar;
 
 import com.advent.of.code.day1.dayOne;
@@ -81,7 +82,15 @@ public class Main {
         }
         System.out.println("\n===========================");
         long endTime = System.nanoTime();
-        long duration = (endTime - startTime);  //divide by 1000000 to get milliseconds
-        System.out.println("\nExecution time: " + duration / 1000000 + " milliseconds");
+
+        long duration = (endTime - startTime);  //divide by 1_000_000 to get milliseconds or by 1_000_000_000 to get seconds
+        double seconds = (double) duration / 1_000_000_000;
+        int minutes = (int) seconds / 60;
+        seconds = seconds % 60;
+        
+        DecimalFormat df = new DecimalFormat("#.######"); // 6 decimal places (hopefully it won't take more than 9 minutes)
+        
+        System.out.println("Execution time: " + minutes + "m" + df.format(seconds) + "s");
+        System.out.println("===========================");
     }
 }
