@@ -1,16 +1,14 @@
 package com.advent.of.code.day12;
 
-import com.advent.of.code.Day;
 
 /**
  * Day Twelve solution
  */
-public class dayTwelve  extends Day {
+public class dayTwelve {
     /**
-     * Run the solution for day two
+     * Run the solution for day twelve
      */
-    @Override
-    public void run() {
+    public static void run() {
         System.out.println("\n===== Day Twelve ==========");
     }
 }

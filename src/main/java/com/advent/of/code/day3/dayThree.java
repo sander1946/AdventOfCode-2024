@@ -3,19 +3,17 @@ package com.advent.of.code.day3;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.advent.of.code.Day;
 import com.advent.of.code.scraper.Scraper;
 
 /**
  * Day Three solution
  */
-public class dayThree extends Day {
+public class dayThree {
     private static boolean dont = false;
     /**
      * Run the solution for day three
      */
-    @Override
-    public void run() {
+    public static void run() {
         System.out.println("\n===== Day Three ===========");
         // Part One
         Scraper scraper = new Scraper(3);
