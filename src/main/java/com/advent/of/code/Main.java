@@ -83,7 +83,7 @@ public class Main {
         System.out.println("\n===========================");
         long endTime = System.nanoTime();
 
-        long duration = (endTime - startTime);  //divide by 1_000_000 to get milliseconds or by 1_000_000_000 to get seconds
+        long duration = (endTime - startTime);  // divide by 1_000_000 to get milliseconds or by 1_000_000_000 to get seconds
         double seconds = (double) duration / 1_000_000_000;
         int minutes = (int) seconds / 60;
         seconds = seconds % 60;

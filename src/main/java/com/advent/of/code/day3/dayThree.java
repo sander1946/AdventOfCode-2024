@@ -31,8 +31,9 @@ public class dayThree {
                 total += leftDigit * rightDigit;
             }
         }
-        System.out.println("Part One: " + total);
+        System.out.println("Result of the normal multiplications: " + total);
 
+        // Part Two
         total = 0;
         for (String line : input) {
             Pattern pattern = Pattern.compile("mul\\([0-9]+,[0-9]+\\)|don't\\(\\)|do\\(\\)");
@@ -53,6 +54,6 @@ public class dayThree {
                 total += leftDigit * rightDigit;
             }
         }
-        System.out.println("Part Two: " + total);
+        System.out.println("Result of the logic multiplications:  " + total);
     }
 }
