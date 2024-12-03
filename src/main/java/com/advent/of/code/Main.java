@@ -20,6 +20,9 @@ public class Main {
     public static void main(String[] args) {
         Calendar cal = Calendar.getInstance();
         int dayOfTheMonth = cal.get(Calendar.DAY_OF_MONTH);
+        long startTime;
+        long endTime;
+
         if (args.length != 0) {
             try {
                 dayOfTheMonth = args[0].isEmpty() ? 0 : Integer.parseInt(args[0]);
@@ -32,31 +35,33 @@ public class Main {
         DAYS.add(new dayTwo());
         DAYS.add(new dayThree());
 
+        System.out.println("=== Advent of Code 2024 ===");
         if (dayOfTheMonth == 0) { // Run all days
+            startTime = System.nanoTime();
+            
             for (Day day : DAYS) {
                 day.run();
             }
+            
+            endTime = System.nanoTime();
         } else if (!(dayOfTheMonth > 0 && dayOfTheMonth <= DAYS.size())) { // Day is not available
             System.out.println("Day " + dayOfTheMonth + " is not available yet");
-
+            return;
         } else { // Run the specific day
-            System.out.println("=== Advent of Code 2024 ===");
-            long startTime = System.nanoTime();
+            startTime = System.nanoTime();
 
             DAYS.get(dayOfTheMonth - 1).run();
 
-            long endTime = System.nanoTime();
-
-            long duration = (endTime - startTime);  // divide by 1_000_000 to get milliseconds or by 1_000_000_000 to get seconds
-            double seconds = (double) duration / 1_000_000_000;
-            int minutes = (int) seconds / 60;
-            seconds = seconds % 60;
-            
-            DecimalFormat df = new DecimalFormat("#.######"); // 6 decimal places (hopefully it won't take more than 9 minutes)
-            
-            System.out.println("\n===========================");
-            System.out.println("Execution time: " + minutes + "m" + df.format(seconds) + "s");
-            System.out.println("===========================");
+            endTime = System.nanoTime();
         }
+        long duration = (endTime - startTime);  // divide by 1_000_000 to get milliseconds or by 1_000_000_000 to get seconds
+        double seconds = (double) duration / 1_000_000_000;
+        int minutes = (int) seconds / 60;
+        seconds = seconds % 60;
+        
+        DecimalFormat df = new DecimalFormat("#.######"); // 6 decimal places (hopefully it won't take more than 9 minutes)
+        System.out.println("\n===========================");
+        System.out.println("Execution time: " + minutes + "m" + df.format(seconds) + "s");
+        System.out.println("===========================");
     }
 }
