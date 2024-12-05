@@ -8,6 +8,7 @@ import com.advent.of.code.day1.dayOne;
 import com.advent.of.code.day2.dayTwo;
 import com.advent.of.code.day3.dayThree;
 import com.advent.of.code.day4.dayFour;
+import com.advent.of.code.day5.dayFive;
 
 /**
  * Main class to run the Advent of Code 2024 challenge
@@ -36,6 +37,7 @@ public class Main {
         DAYS.add(new dayTwo());
         DAYS.add(new dayThree());
         DAYS.add(new dayFour());
+        DAYS.add(new dayFive());
 
         System.out.println("=== Advent of Code 2024 ===");
         if (dayOfTheMonth == 0) { // Run all days
