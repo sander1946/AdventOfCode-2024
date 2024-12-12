@@ -4,12 +4,9 @@ package com.advent.of.code;
 /**
  * Interface for the days
  */
-public class Day implements IDay {
+public abstract class Day {
     /**
      * Run the solution for the day
      */
-    @Override
-    public void run() {
-        System.out.println("This is the default run method");
-    }
+    abstract public void run();
 }
